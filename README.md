@@ -1,59 +1,60 @@
-# GithubUserSearchEngineAngular
+# Github User Search Engine - Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+Este projeto tem como objetivo criar uma aplicação simples em Angular para buscar e exibir informações sobre usuários do GitHub, incluindo seus repositórios públicos.
 
-## Development server
+## Como Executar a Aplicação
 
-To start a local development server, run:
+### 1. Executando Localmente
 
-```bash
-ng serve
-```
+Para rodar a aplicação localmente, siga os passos abaixo:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+1. Baixe o código do repositório.
+2. Instale as dependências utilizando o comando:
 
-## Code scaffolding
+~~~bash
+npm install
+~~~
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+3. Execute o comando abaixo para iniciar a aplicação:
+~~~bash
+npm run start
+~~~
 
-```bash
-ng generate component component-name
-```
+A aplicação estará disponível em http://localhost:4200/[http://localhost:4200/].
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Via Docker
 
-```bash
-ng generate --help
-```
+Se preferir rodar a aplicação em um ambiente dockerizado, siga os passos abaixo:
 
-## Building
+1. Construa a imagem Docker:
 
-To build the project run:
+~~~bash
+docker build -t github-username-search-engine .
+~~~
 
-```bash
-ng build
-```
+2. Execute a aplicação no Docker:
+~~~bash
+docker run -p 4201:4200 github-username-search-engine
+~~~
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+A aplicação estará disponível em http://localhost:4201/[http://localhost:4201/].
 
-## Running unit tests
+### Aplicação Publicada
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Esta aplicação também está publicada, você pode acessar aqui[https://frolicking-empanada-3195bb.netlify.app/] 
 
-```bash
-ng test
-```
+## Funcionalidades
 
-## Running end-to-end tests
+Esta aplicação foi construida de maneira simples para atender a estes requisitos:
 
-For end-to-end (e2e) testing, run:
+1. Eu, como usuário, preciso de um campo onde inserir um usuário do GitHub e, clicando em um botão ou pressionando enter, a aplicação faça uma busca e me envie para uma página com o resultado dessa pesquisa listando os repositórios do usuário localizado. Se o usuário não existir, preciso receber um alerta da aplicação
+2. Eu, como usuário, gostaria de receber um feedback de carregamento enquanto a aplicação busca os dados do usuário que eu digitei
+3. Eu, como usuário, gostaria de receber o feedback da aplicação quando o usuário inserido no campo de busca não for válido de acordo com as regras de validação do GitHub
+4. Eu, como usuário, gostaria de receber uma notificação caso perca a conexão com a internet durante a busca dos dados pela aplicação
+5. Eu, como usuário, gostaria de poder acessar os dados de usuários que já pesquisei de modo offline
 
-```bash
-ng e2e
-```
+### Bibliotecas utilizadas
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Para a configuração de dados offline, utilizei a biblioteca ngx-indexed-db[https://www.npmjs.com/package/ngx-indexed-db].
+2. Para a configuração de internacionalização, utilizei a biblioteca ngx-translate [https://www.npmjs.com/package/@ngx-translate/core]
+3. Para a estilização, utilizei a biblioteca bootstrap[https://www.npmjs.com/package/bootstrap]
