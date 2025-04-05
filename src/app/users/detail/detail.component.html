@@ -1,0 +1,85 @@
+<util-loading-spinner spinnerSize="large" [overlay]="true" *ngIf="loading"></util-loading-spinner>
+<div class="container mt-5" *ngIf="!loading">
+    <div class="row">
+        <div class="col col-3 p-1">
+            <div class="card text-white bg-secondary mb-3 p-4">
+                <div class="card-header d-flex p-0 gap-2 align-items-center pb-2">
+                    <img class="img-fluid rounded bg-white w-25 h-25" [src]="userData.avatar_url">
+                    <div>
+                        <h3>{{userData.name}}</h3>
+                        <span> {{'@' + userData.login}} </span>
+                    </div>
+                </div>
+                <div>
+                </div>
+                <div>
+                    <p>{{ userData.bio}}</p>
+                </div>
+                <div class="d-flex flex-column ">
+                    <span>{{ 'users.followers'|translate }} {{ userData.followers}}</span>
+                    <span>{{ 'users.following'|translate }} {{ userData.following }}</span>
+                    <span>{{ 'users.location'|translate }} {{ userData.location ? userData.location :
+                        ('users.unkown' | translate) }}</span>
+                </div>
+            </div>
+
+            <div class="card text-white bg-secondary mb-3 p-4">
+                <div>
+                    <p>{{ 'users.repositories.filter-repo'|translate }}</p>
+                    <input type="text" (keyup.enter)="filterRepos(filterName.value)" class="form-control" #filterName />
+                    <div class="d-flex mt-2 justify-content-end">
+                        <button class="btn btn-primary"
+                            type="button" (click)="filterRepos(filterName.value)">
+                            {{ 'users.repositories.filter' | translate }}
+                        </button>
+                        <button class="btn btn-accent text-white"
+                            type="button" (click)="filterRepos(''); filterName.value = ''">
+                            {{ 'users.repositories.clear' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-white bg-secondary mb-3 p-4">
+                <a routerLink="" class="text-white">{{ 'users.return' | translate }}</a>    
+            </div>
+        </div>
+        <div class="col col-9 p-1">
+            <div class="card text-white border-primary bg-secondary mb-3 p-4">
+                <h4>{{ 'users.repositories.title'|translate }}</h4>
+                <table class="table table-striped  table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">
+                                <span class="d-flex justify-content-between">
+                                    {{ 'users.repositories.name'|translate }}
+                                    <button class="btn" (click)="orderRepositories('name')">
+                                        <i class="bi bi-arrow-down-up"></i>
+                                    </button>
+                                </span>
+                            </th>
+                            <th scope="col"><span class="d-flex justify-content-between">
+                                    {{ 'users.repositories.stars'|translate }}
+                                    <button class="btn" (click)="orderRepositories('stargazers_count')">
+                                        <i class="bi bi-arrow-down-up"></i>
+                                    </button>
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="filteredRepositories.length == 0">
+                            <td colspan="2">{{ 'users.repositories.zero-repos'| translate }}</td>
+                        </tr>
+                        <tr *ngFor="let repo of filteredRepositories let i=index;">
+                            <td>{{repo.name}}</td>
+                            <td>{{repo.stargazers_count}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

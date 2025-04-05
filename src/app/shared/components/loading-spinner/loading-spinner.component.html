@@ -1,0 +1,7 @@
+<div class="spinner-container" [class.spinner-overlay]="overlay">
+  <div class="spinner" [ngClass]="{
+      'small': spinnerSize == 'small',
+      'medium': spinnerSize == 'medium',
+      'large': spinnerSize == 'large'
+    }"></div>
+</div>

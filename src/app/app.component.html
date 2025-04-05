@@ -1,0 +1,17 @@
+<div class="alert alert-danger" *ngIf="!appIsOffline">
+    {{ 'home.offline' | translate}}
+</div>
+
+<div class="mt-5">
+    <router-outlet></router-outlet>
+</div>
+
+<div class="fixed-top d-flex justify-content-end align-items-center switch-lang mt-2">
+    <span>{{ 'home.switch-languages' | translate}}</span>
+    <button class="btn" (click)="useLanguage('en')">
+        <img src="./img/united-states.png" [class.active]="getCurrLang() == 'en'">
+    </button>
+    <button class="btn" (click)="useLanguage('pt')" >
+        <img src="./img/brazil-.png" [class.active]="getCurrLang() == 'pt'">
+    </button>
+</div>

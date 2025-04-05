@@ -1,0 +1,29 @@
+{
+    "home": {
+        "switch-languages": "Switch languages",
+        "offline": "Application without internet connection. The data displayed is an outdated version"
+    },
+    "users": {
+        "app-name": "Github Username Search Engine",
+        "search-user": "Search by username...",
+        "search-invalid-username":"This username violates github user rules",
+        "search": "Search",
+        "user-not-found-title": "Ooopsie....",
+        "user-not-found-message": "The username \"{{ username }}\" was not found.",
+        "try-again": "Try again",
+        "repositories": {
+            "title": "Repositories",
+            "name": "Repository Name",
+            "stars": "Stars",
+            "zero-repos":"This user does not have any repositories yet!",
+            "filter-repo": "Filter by repository name:",
+            "filter": "Filter",
+            "clear": "Clear"
+        },
+        "followers": "Followers:",
+        "following": "Following:",
+        "location": "Location:",
+         "unkown": "Unkown",
+         "return": "Return to search page"
+    }
+}

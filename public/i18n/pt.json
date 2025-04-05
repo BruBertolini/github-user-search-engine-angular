@@ -1,0 +1,29 @@
+{
+    "home": {
+        "switch-languages": "Trocar linguagem",
+        "offline": "Aplicação está sem conexão com a internet. Os dados exibidos são uma versão desatualizada"
+    },
+    "users": {
+        "app-name": "Buscador de Usuários do Github",
+        "search-user": "Procure um nome de usuário...",
+        "search-invalid-username":"Esse nome de usuário viola as regras de usuário do github",
+        "search": "Pesquisar",
+        "user-not-found-title": "Ooops....",
+        "user-not-found-message": "O usuário \"{{ username }}\" não foi encontrado.",
+        "try-again": "Tente novamente",
+        "repositories": {
+            "title": "Respositórios",
+            "name": "Nome do Repositório",
+            "stars": "Estrelas",
+            "zero-repos":"Este usuário não possui repositórios ainda.",
+            "filter-repo": "Filtre pelo nome do repositório:",
+            "filter": "Filtrar",
+            "clear": "Limpar"
+        },
+        "followers": "Seguidores:",
+        "following": "Seguindo:",
+        "location": "Localização:",
+        "unkown": "Desconhecido",
+        "return": "Voltar a página de busca"
+    }
+}

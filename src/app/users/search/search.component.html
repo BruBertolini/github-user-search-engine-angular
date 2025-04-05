@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-center align-itens-center mt-5">
+    <h2 class="display-2">{{ 'users.app-name' | translate }}</h2>
+</div>
+<div class="container username-search">
+    <div class="form-div">
+        <form [formGroup]="form" (ngSubmit)="searchForUser()" (keyup.enter)="searchForUser()">
+            <div class="d-flex justify-content-start align-itens-center gap-2 ">
+                <input type="text" class="form-control" formControlName="username" placeholder="{{ 'users.search-user' | translate }}" />
+                <button class="btn btn-primary" [disabled]="!form.valid" type="submit">
+                    {{ 'users.search' | translate }}
+                </button>
+                <util-loading-spinner [overlay]="false" spinnerSize="small" [hidden]="!loading"></util-loading-spinner>
+            </div>
+            <div class="invalid-search" *ngIf="form.get('username')?.errors?.['pattern'] != null">
+                <span class="p-2">{{ 'users.search-invalid-username' | translate }}</span>
+            </div>
+        </form>
+        <div class="d-flex justify-content-center align-itens-center mt-5">
+            <img class="banner-image mb-5" src="./img/jetpacktocat.png" />
+        </div>
+    </div>
+</div>
+
+<div id="userNotFoundModal" (keyup.escape)="closeModal()" class="modal-not-found" *ngIf="showUserNotFound">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">{{ 'users.user-not-found-title' | translate }}</h5>
+            <button type="button" class="close" (click)="closeModal()" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            {{ 'users.user-not-found-message' | translate:{username: form.getRawValue().username} }}
+        </div>
+        <div class="modal-footer">
+            <button type="button" (click)="closeModal()" class="btn btn-secondary" data-dismiss="modal">
+                {{ 'users.try-again' | translate }}
+            </button>
+        </div>
+    </div>
+</div>
+
+
