@@ -53,6 +53,15 @@ Esta aplicação foi construida de maneira simples para atender a estes requisit
 4. Eu, como usuário, gostaria de receber uma notificação caso perca a conexão com a internet durante a busca dos dados pela aplicação
 5. Eu, como usuário, gostaria de poder acessar os dados de usuários que já pesquisei de modo offline
 
+
+### Testes unitários
+
+1. Execute o comando abaixo:
+
+~~~bash
+npm run test
+~~~
+
 ### Bibliotecas utilizadas
 
 1. Para a configuração de dados offline, utilizei a biblioteca ngx-indexed-db[https://www.npmjs.com/package/ngx-indexed-db].
