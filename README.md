@@ -20,7 +20,7 @@ npm install
 npm run start
 ~~~
 
-A aplicação estará disponível em http://localhost:4200/[http://localhost:4200/].
+A aplicação estará disponível em [http://localhost:4200/](http://localhost:4200/).
 
 ### Via Docker
 
@@ -37,11 +37,11 @@ docker build -t github-username-search-engine .
 docker run -p 4201:4200 github-username-search-engine
 ~~~
 
-A aplicação estará disponível em http://localhost:4201/[http://localhost:4201/].
+A aplicação estará disponível em [http://localhost:4201/](http://localhost:4201/).
 
 ### Aplicação Publicada
 
-Esta aplicação também está publicada, você pode acessar aqui[https://frolicking-empanada-3195bb.netlify.app/] 
+Esta aplicação também está publicada, você pode acessar [aqui](https://frolicking-empanada-3195bb.netlify.app/)
 
 ## Funcionalidades
 
@@ -64,6 +64,6 @@ npm run test
 
 ### Bibliotecas utilizadas
 
-1. Para a configuração de dados offline, utilizei a biblioteca ngx-indexed-db[https://www.npmjs.com/package/ngx-indexed-db].
-2. Para a configuração de internacionalização, utilizei a biblioteca ngx-translate [https://www.npmjs.com/package/@ngx-translate/core]
-3. Para a estilização, utilizei a biblioteca bootstrap[https://www.npmjs.com/package/bootstrap]
+1. Para a configuração de dados offline, utilizei a biblioteca [ngx-indexed-db](https://www.npmjs.com/package/ngx-indexed-db).
+2. Para a configuração de internacionalização, utilizei a biblioteca [ngx-translate] (https://www.npmjs.com/package/@ngx-translate/core)
+3. Para a estilização, utilizei a biblioteca [bootstrap](https://www.npmjs.com/package/bootstrap])
